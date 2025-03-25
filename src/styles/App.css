@@ -29,13 +29,21 @@ body {
   letter-spacing: 2px;
 }
 
+.map-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
 .control-panel {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   width: 90%;
   max-width: 1200px;
-  margin: 40px 0;
+  margin: 20px 0;
 }
 
 .control-section {
@@ -54,7 +62,7 @@ body {
   text-align: center;
 }
 
-.gesture-control, .voice-control {
+.voice-control {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
@@ -100,7 +108,23 @@ body {
 }
 
 .control-card button:hover {
-  background:  #00b0cc;
+  background: #00b0cc;
+}
+
+.test-btn {
+  background: #ff69b4;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  color: #1a1a1a;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+  margin-bottom: 20px;
+}
+
+.test-btn:hover {
+  background: #ff1493;
 }
 
 .ai-overlay {
@@ -119,44 +143,59 @@ body {
 .ai-interface {
   position: relative;
   background: url('/Volumes/SeagatePor/InfotainmentSystem/car-infotainment/public/AI.gif') no-repeat center center;
-  /*background-size: contain; /* Ensures the entire GIF is visible, even if it leaves space */
   padding: 30px;
   border-radius: 15px;
   width: 80%;
   max-width: 600px;
-  height: 400px;
-  min-height: 300px;
+  height: 450px;
+  min-height: 350px;
   text-align: center;
   border: 2px solid #bb00ff;
-  box-shadow: 0 8px 16px rgba(0, 212, 255, 0.5);
+  box-shadow: 0 0 16px rgba(0, 212, 255, 0.5);
   animation: fadeIn 0.3s ease-in-out;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
+  background-size: 100% 100%;
+  background-color: #1a1a1a;
+  transition: background-image 0.5s ease, opacity 0.5s ease;
+  opacity: 1;
 }
 
-.ai-interface h2 {
-  font-size: 1.8rem;
-  color: #00d4ff;
-  margin-bottom: 20px;
+.ai-interface.listening {
+  background: url('/Volumes/SeagatePor/InfotainmentSystem/car-infotainment/public/WAVE.gif') no-repeat center center;
+  background-size: 100% 100%;
+  background-color: #1a1a1a;
+  opacity: 1;
 }
 
-.ai-interface p {
-  font-size: 1rem;
-  color: #ccc;
-  margin: 10px 0;
+.ai-interface.transitioning {
+  opacity: 0;
+  background: url('/Volumes/SeagatePor/InfotainmentSystem/car-infotainment/public/AI.gif') no-repeat center center;
+  background-size: 100% 100%;
+  background-color: #1a1a1a;
 }
 
-.mic-icon {
-  font-size: 3rem;
-  color: #00d4ff;
-  margin: 20px 0;
-  animation: pulse 1.5s infinite;
+.speak-btn {
+  background: #ff69b4;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  color: #1a1a1a;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
 }
 
-.status {
-  font-style: italic;
+.speak-btn:disabled {
+  background: #666;
+  cursor: not-allowed;
+}
+
+.speak-btn:hover:not(:disabled) {
+  background: #ff1493;
+  transform: scale(1.05);
 }
 
 .close-btn {
@@ -178,74 +217,10 @@ body {
   background: #cc0000;
 }
 
-.map-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 40px;
+.status {
+  font-style: italic;
 }
 
-.map-gesture-btn {
-  background: #00d4ff;
-  border: none;
-  padding: 10px 20px;
-  margin: 10px;
-  border-radius: 5px;
-  color: #1a1a1a;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-
-.map-gesture-btn:hover {
-  background: #00b0cc;
-}
-
-.music-app {
-  padding: 20px;
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 15px;
-  margin: 20px 0;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-  width: 90%;
-  max-width: 1200px;
-  text-align: center;
-}
-
-.music-app h2 {
-  color: #00d4ff;
-  font-size: 1.8rem;
-  margin-bottom: 20px;
-}
-
-.music-app p {
-  font-size: 1rem;
-  color: #ccc;
-  margin: 10px 0;
-}
-
-.gesture-controls {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-}
-
-.gesture-btn {
-  background: #00d4ff;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  color: #1a1a1a;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-
-.gesture-btn:hover {
-  background: #00b0cc;
-}
-
-/* Animations */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -255,23 +230,4 @@ body {
     opacity: 1;
     transform: scale(1);
   }
-}
-
-@keyframes pulse {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.1);
-  }
-  100% {
-    transform: scale(1);
-  }
-}.ai-gif {
-  display: block;
-  margin: 20px auto;
-  width: 150px; /* Adjust size as needed */
-  height: auto;
-  border-radius: 10px; /* Optional: rounded corners */
-  animation: pulse 1.5s infinite; /* Optional: pulsing animation for effect */
 }
