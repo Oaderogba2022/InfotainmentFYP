@@ -4,10 +4,6 @@ function GestureControl({ onGesture }) {
   const gestures = [
     { action: 'Increase Volume', gesture: 'Swipe Up' },
     { action: 'Decrease Volume', gesture: 'Swipe Down' },
-    { action: 'Set Destination (North)', gesture: 'Swipe Right' },
-    { action: 'Set Destination (South)', gesture: 'Swipe Left' },
-    { action: 'Next Track', gesture: 'Custom Gesture (e.g., Circle)' },
-    { action: 'Previous Track', gesture: 'Custom Gesture (e.g., Circle)' },
   ];
 
   return (
