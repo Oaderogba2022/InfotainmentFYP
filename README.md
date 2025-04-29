@@ -2,6 +2,14 @@
 
 This project is a gesture and voice-controlled car infotainment system built with Create React App and Python, integrating Google Maps for navigation, music playback, and real-time user interaction.
 
+![image](https://github.com/user-attachments/assets/4567eb28-cdba-4009-91e9-59d7d7390db0)
+
+
+![image](https://github.com/user-attachments/assets/7216edda-d502-49b1-a53c-97fe8be5bb6a)
+
+
+![image](https://github.com/user-attachments/assets/5057ade5-7e98-4349-a5b4-3f009ad5b2ca)
+
 ## Project Overview
 
 This car infotainment system enhances the driving experience through hands-free interaction. It uses hand gestures (via webcam) and voice commands to control navigation on Google Maps, toggle traffic layers, and manage music playback. The system features a React frontend for the user interface and a Python backend for gesture recognition.
