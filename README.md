@@ -58,5 +58,38 @@ Click the "AI Assistant" button and say commands like:
 - "Navigate to Dublin"
 - "Set current location"
 
+## Technologies Used
 
+### Frontend 
+
+•	React(v2.19.3)
+•	Socket.IO Client (v4.7)
+•	@react-google-maps/api (v2.19.3)
+
+### Backend 
+
+•	Python (v3.12)
+•	MediaPipe (v0.10.14): 
+•	OpenCV (v4.10)
+•	Socket.IO (Python, v3.0): 
+
+### API's
+
+• Google Maps JavaScript API
+• Google Maps Places API
+• Web Speech API
+• Geolocation API
+
+## Project Structure
+### Frontend
+car-infotainment/src/App.js
+car-infotainment/src/components/GoogleMapComponent.js
+car-infotainment/src/components/ControlPanel.js
+car-infotainment/src/components/GestureControl.js
+car-infotainment/src/components/VoiceControl.js
+car-infotainment/src/components/MusicPlayer.js
+car-infotainment/src/components/Server.js
+
+## Backend
+gesture_server.py
 
