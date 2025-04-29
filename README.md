@@ -1,4 +1,4 @@
-# Car Infotainment System
+# AutoSync Car Infotainment System
 
 This project is a gesture and voice-controlled car infotainment system built with Create React App and Python, integrating Google Maps for navigation, music playback, and real-time user interaction.
 
