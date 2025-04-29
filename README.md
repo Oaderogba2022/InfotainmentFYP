@@ -1,33 +1,37 @@
-# Getting Started with Create React App
+# Car Infotainment System
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a gesture and voice-controlled car infotainment system built with Create React App and Python, integrating Google Maps for navigation, music playback, and real-time user interaction.
 
-## Available Scripts
+## Project Overview
 
-In the project directory, you can run:
+This car infotainment system enhances the driving experience through hands-free interaction. It uses hand gestures (via webcam) and voice commands to control navigation on Google Maps, toggle traffic layers, and manage music playback. The system features a React frontend for the user interface and a Python backend for gesture recognition.
 
-### `npm start`
+### Key Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Gesture-based navigation and music control (e.g., "Shaka" to toggle traffic layer, "Open Hand" to play/pause music).
+- Voice commands for navigation (e.g., "Navigate to Dublin").
+- Google Maps integration for real-time navigation and traffic display.
+- Accessibility with keyboard shortcuts and ARIA labels.
+- Toast notifications for gesture feedback.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Getting Started
+## Prerequisites
 
-### `npm test`
+- Node.js (v18.x) and npm (v9.x)
+- Python (v3.x)
+- A Google Maps API Key from Google Cloud Console (with Maps JavaScript API and Places API enabled)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Installation
 
-### `npm run build`
+git clone https://github.com/your-username/car-infotainment-system.git
+cd car-infotainment-system
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+cd car-infotainment
+npm install
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+pip install opencv-python mediapipe numpy python-socketio
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+REACT_APP_GOOGLE_MAPS_API_KEY=your-google-maps-api-key
 
 ### `npm run eject`
 
