@@ -41,13 +41,14 @@ pip install opencv-python mediapipe numpy python-socketio
 
 REACT_APP_GOOGLE_MAPS_API_KEY=your-google-maps-api-key
 
-### `npm run eject`
+### Interact with the System
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Using Gestures
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- "L Shape": Sets destination to Portlaoise.
+- "Three Fingers": Clears the destination.
+- "Shaka": Toggles the traffic layer on the map.
+- "Pointing": Starts navigation to the destination.
+- "Fist": Stops navigation.
+- "Open Hand": Plays/pauses music.
 
