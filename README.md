@@ -52,3 +52,11 @@ REACT_APP_GOOGLE_MAPS_API_KEY=your-google-maps-api-key
 - "Fist": Stops navigation.
 - "Open Hand": Plays/pauses music.
 
+### Using Voice Commands
+Click the "AI Assistant" button and say commands like:
+
+- "Navigate to Dublin"
+- "Set current location"
+
+
+
