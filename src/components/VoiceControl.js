@@ -1,50 +1,48 @@
-import React, { useState } from 'react';
+// src/components/VoiceControl.js
+import React, { useState, useImperativeHandle, forwardRef } from 'react';
 import AIInterface from './AIInterface';
+import '../styles/VoiceControl.css';
 
-function VoiceControl({ setDestination, setCurrentLocation }) {
+const VoiceControl = forwardRef(({ setDestination, setCurrentLocation }, ref) => {
   const [isAIOpen, setIsAIOpen] = useState(false);
+  const [openedByGesture, setOpenedByGesture] = useState(false); 
 
-  const commands = [
-    { command: 'Turn Up Volume', response: 'Volume increased.' },
-    { command: 'Navigate Home', response: 'Setting route to home...' },
-    { command: 'Call Mom', response: 'Dialing Mom...' },
-    { command: 'Go to Location 1', response: 'Setting route to Location 1...' },
-    { command: 'Go to Location 2', response: 'Setting route to Location 2...' },
-    { command: 'Go to Location 3', response: 'Setting route to Location 3...' },
-  ];
-
-  const testLocations = {
-    'location 1': { lat: 53.3498, lng: -6.2603, name: 'Dublin, Ireland' },
-  };
-
-  const handleSpeakClick = () => {
+  const handleAssistantClick = () => {
+    setOpenedByGesture(false); 
     setIsAIOpen(true);
   };
 
   const handleCloseAI = () => {
     setIsAIOpen(false);
+    setOpenedByGesture(false); 
   };
 
-  const handleTestLocation = () => {
-    setDestination(testLocations['location 1']); // Sets to Dublin, Ireland
-    console.log('Test Location 1 Set:', testLocations['location 1']);
-  };
+  useImperativeHandle(ref, () => ({
+    openAI: () => {
+      setOpenedByGesture(true); 
+      setIsAIOpen(true);
+    },
+    closeAI: () => {
+      setIsAIOpen(false);
+      setOpenedByGesture(false); 
+    },
+  }));
 
   return (
     <div className="voice-control">
-      <button className="test-btn" onClick={handleTestLocation}>
-        Test Route to Dublin, Ireland
-      </button>
-      {commands.map((item, index) => (
-        <div key={index} className="control-card">
-          <h3>{item.command}</h3>
-          <p>Response: {item.response}</p>
-          <button onClick={handleSpeakClick}>Speak</button>
-        </div>
-      ))}
-      {isAIOpen && <AIInterface onClose={handleCloseAI} setDestination={setDestination} setCurrentLocation={setCurrentLocation} />}
+      <div className="control-card">
+        <button onClick={handleAssistantClick}>
+          AI Car Assistant
+        </button>
+      </div>
+      {isAIOpen && <AIInterface 
+        onClose={handleCloseAI} 
+        setDestination={setDestination} 
+        setCurrentLocation={setCurrentLocation}
+        openedByGesture={openedByGesture} 
+      />}
     </div>
   );
-}
+});
 
 export default VoiceControl;

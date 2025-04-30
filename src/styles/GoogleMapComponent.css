@@ -1,0 +1,8 @@
+/* src/styles/GoogleMapComponent.css */
+.map-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+  }

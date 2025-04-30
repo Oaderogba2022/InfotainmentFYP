@@ -1,0 +1,42 @@
+/* src/styles/ControlCard.css */
+.control-card {
+    background: #333;
+    padding: 20px;
+    border-radius: 10px;
+    width: 200px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 1px solid #00d4ff;
+  }
+  
+  .control-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 212, 255, 0.5);
+  }
+  
+  .control-card h3 {
+    margin: 0 0 10px;
+    font-size: 1.2rem;
+    color: #fff;
+  }
+  
+  .control-card p {
+    margin: 0 0 15px;
+    font-size: 0.9rem;
+    color: #ccc;
+  }
+  
+  .control-card button {
+    background: #00d4ff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: #1a1a1a;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .control-card button:hover {
+    background: #00b0cc;
+  }
