@@ -5,7 +5,7 @@ import '../styles/GoogleMapComponent.css';
 const containerStyle = {
   width: '90%',
   height: '400px',
-  margin: '20px auto',
+  margin: '20px auto', 
   borderRadius: '15px',
   boxShadow: '0 8px 16px rgba(0, 0, 0, 0.3)',
 };
