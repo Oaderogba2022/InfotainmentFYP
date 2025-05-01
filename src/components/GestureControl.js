@@ -8,7 +8,7 @@ function GestureControl({ onGesture }) {
   const [frame, setFrame] = useState(null);
 
   useEffect(() => {
-    const socket = io('http://localhost:5000');
+    const socket = io('http://localhost:5000') ; 
 
     socket.on('gesture_update', (data) => {
       setCurrentGesture(data.gesture);
